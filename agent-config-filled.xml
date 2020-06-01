@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jfragent>
+	<!-- Global configuration options -->
+	<config>
+		<!-- This is the prefix to use when generating event class names -->
+		<classprefix>__JFREvent</classprefix>
+		<!-- Will allow the recording of arrays and object parameters as Strings. 
+			This will cause toString to be called for array elements and objects other 
+			than strings, which in turn can cause trouble if the toString method is badly 
+			implemented. Use with care. -->
+		<allowtostring>true</allowtostring>
+		<!-- Allows converters to be used. If a converter is badly implemented, 
+			you are on your own. -->
+		<allowconverter>true</allowconverter>
+	</config>
+	<events>
+		<event id="dining_philosophers.pickup">
+			<name>Chopstick Pick Up</name>
+			<description>A philosopher is trying the pick up a chopstick</description>
+			<class>com.tabjy.dining_philosophers.Chopstick</class>
+			<path>demo/dining_philosophers</path>
+			<stacktrace>false</stacktrace>
+			<method>
+				<name>pickUp</name>
+				<descriptor>(Lcom/tabjy/dining_philosophers/Philosopher;J)Z</descriptor>
+				<!--parameters>
+					<parameter index="0">
+						<name>Requesting Philosophers</name>
+						<description>the philosophers trying to pick up this chopstick</description>
+					</parameter>
+				</parameters-->
+			</method>
+			<location>WRAP</location>
+			<!--fields>
+				<field>
+					<name>Owner</name>
+					<description>the philosophers currently using the chopstick</description>
+					<expression>this.pickedUpBy</expression>
+				</field>
+			</fields-->
+		</event>
+		<!--event id="dining_philosophers.putdown">
+			<name>Chopstick Put Down</name>
+			<description>A philosopher is putting down a chopstick</description>
+			<class>com.tabjy.dining_philosophers.Chopstick</class>
+			<path>demo/dining_philosophers</path>
+			<stacktrace>false</stacktrace>
+			<method>
+				<name>putDown</name>
+				<descriptor>()V</descriptor>
+				<parameters>
+					<parameter index="0">
+						<name>Requesting Philosophers</name>
+						<description>the philosophers trying to pick up this chopstick</description>
+					</parameter>
+				</parameters>
+			</method>
+			<location>WRAP</location>
+			<fields>
+				<field>
+					<name>Owner</name>
+					<description>the philosophers currently using the chopstick</description>
+					<expression>this.pickedUpBy</expression>
+				</field>
+			</fields>
+		</event-->
+	</events>
+</jfragent>

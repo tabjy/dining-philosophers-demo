@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jfragent>
+	<!-- Global configuration options -->
+	<config>
+		<!-- This is the prefix to use when generating event class names -->
+		<classprefix>__JFREvent</classprefix>
+		<!-- Will allow the recording of arrays and object parameters as Strings. 
+			This will cause toString to be called for array elements and objects other 
+			than strings, which in turn can cause trouble if the toString method is badly 
+			implemented. Use with care. -->
+		<allowtostring>true</allowtostring>
+		<!-- Allows converters to be used. If a converter is badly implemented, 
+			you are on your own. -->
+		<allowconverter>true</allowconverter>
+	</config>
+	<events>
+	</events>
+</jfragent>
